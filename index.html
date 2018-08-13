@@ -1,44 +1,48 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title></title>
-    <style>
-      html, body {
-        height: 100%;
-      }
-      body {
-        background-color: #363737;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #link_get_widget {
-        display: none;
-      }
-      #weather {
-        width: 300px;
-        transform: scale(1.5);
-        margin-right: 200px;
-      }
-      #tfl {
-        width: 30%;
-      }
-    </style>
-  </head>
-  <body>
-    <div id='weather'>
-      <a class="weatherwidget-io" href="https://forecast7.com/en/55d51n5d09/kingscross/" data-label_1="King's Cross" data-label_2="London" data-theme="original" data-baseColor="#363737">King's Cross London</a>
-      <script>
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
-      </script>
-      <!--<a href="https://www.accuweather.com/en/gb/kings-cross/n1-0/weather-forecast/2532721" class="aw-widget-legal"></a>
-      <div id="awcc1516734300905" class="aw-widget-current"  data-locationkey="2532721" data-unit="c" data-language="en-gb" data-useip="false" data-uid="awcc1516734300905"></div>
-      <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>-->
-    </div>
-    <div id='tfl'>
-      <script language="JavaScript" src="https://www.tfl.gov.uk/tfl/syndication/widgets/serviceboard/embeddable/serviceboard-iframe-stretchy.js"></script>
-    </div>
-  </body>
+ <head>
+   <meta charset='utf-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title></title>
+   <style>
+     html, body {
+       height: 100%;
+     }
+     body {
+       background-color: #363737;
+     }
+     #link_get_widget {
+       display: none;
+     }
+     #weather,
+     #tfl {
+      position: absolute;
+      top: 50%;;
+      transform: translate(-50%, -50%);
+     }
+     #weather {
+       left: 25%;
+       width: 300px;
+     }
+     #tfl {
+      left: 75%;
+       width: 30%;
+       margin-top: -7px; /* Move the tfl widget up slightly */
+     }
+   </style>
+ </head>
+ <body>
+   <div id='weather'>
+     <a class="weatherwidget-io" href="https://forecast7.com/en/55d51n5d09/kingscross/" data-label_1="King's Cross" data-label_2="London" data-theme="original" data-baseColor="#363737">King's Cross London</a>
+     <script>
+     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
+     </script>
+     <!--<a href="https://www.accuweather.com/en/gb/kings-cross/n1-0/weather-forecast/2532721" class="aw-widget-legal"></a>
+     <div id="awcc1516734300905" class="aw-widget-current"  data-locationkey="2532721" data-unit="c" data-language="en-gb" data-useip="false" data-uid="awcc1516734300905"></div>
+     <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>-->
+   </div>
+   <div id='tfl'>
+     <script language="JavaScript" src="https://www.tfl.gov.uk/tfl/syndication/widgets/serviceboard/embeddable/serviceboard-iframe-stretchy.js"></script>
+   </div>
+ </body>
 </html>
